@@ -21,14 +21,5 @@
     "vaadin-*.js",
     "src",
     "theme"
-  ],
-  "scripts": {
-    "test": "wct",
-    "prestart": "polymer analyze vaadin-* > analysis.json",
-    "start": "polymer serve --port 3000 --open",
-    "preversion": "gulp version:update"
-  },
-  "devDependencies": {
-    "@vaadin/vaadin-component-dev-dependencies": "^1.0.0"
-  }
+  ]
 }
