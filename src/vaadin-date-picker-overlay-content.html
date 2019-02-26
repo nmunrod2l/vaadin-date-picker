@@ -383,11 +383,13 @@ This program is available under Apache License Version 2.0, available at https:/
          */
         revealDate(date) {
           if (date) {
+            var roundedPosition = Number(this.$.monthScroller.position.toFixed());
+
             var diff = this._differenceInMonths(date, this._originDate);
-            var scrolledAboveViewport = this.$.monthScroller.position > diff;
+            var scrolledAboveViewport = roundedPosition > diff;
 
             var visibleItems = this.$.monthScroller.clientHeight / this.$.monthScroller.itemHeight;
-            var scrolledBelowViewport = this.$.monthScroller.position + visibleItems - 1 < diff;
+            var scrolledBelowViewport = roundedPosition + visibleItems - 1 < diff;
 
             if (scrolledAboveViewport) {
               this._scrollToPosition(diff, true);
